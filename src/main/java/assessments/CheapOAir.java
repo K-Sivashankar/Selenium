@@ -1,4 +1,4 @@
-package sprint1.week1.classroom;
+package assessments;
 
 /*
  * https://www.cheapoair.com/
