@@ -91,13 +91,11 @@ public class Nba {
 
         //click on Profile
         click("(//a[text()='Profile'])[1]");
-        //Handle Ad if any
-//        getElement("(//button[preceding::div[text()='Click to sign up for NBA ID']])[1]").click();
 
         String actualExperience = getElement("(//p[text()='EXPERIENCE']/following-sibling::p)[1]").getText();
         System.out.println("Actual Exp :: "+actualExperience);
         System.out.println("Youngest age "+youngestAge);
-        System.out.println("Playername"+textPlayername);
+        System.out.println("Playername :: "+textPlayername);
         Assert.assertTrue(actualExperience.contains("1"));
 
 
