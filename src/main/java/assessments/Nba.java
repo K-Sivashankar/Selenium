@@ -56,6 +56,9 @@ public class Nba {
     public void test()
     {
         chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");  // Optional: Run in headless mode
+        chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--disable-dev-shm-usage");
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
