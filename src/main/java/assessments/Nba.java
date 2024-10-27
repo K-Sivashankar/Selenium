@@ -58,7 +58,7 @@ public class Nba {
         chromeOptions = new ChromeOptions();
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://www.nba.com/stats");
         try {
             WebElement element = getElement("//button[text()='I Accept']");
@@ -90,7 +90,7 @@ public class Nba {
         playerName.click();
 
         //click on Profile
-        getElement("(//a[text()='Profile'])[1]").click();
+        click("(//a[text()='Profile'])[1]");
         //Handle Ad if any
 //        getElement("(//button[preceding::div[text()='Click to sign up for NBA ID']])[1]").click();
 
