@@ -60,6 +60,7 @@ public class Nba {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://www.nba.com/stats");
+
         try {
             WebElement element = getElement("//button[text()='I Accept']");
             if(element.isDisplayed())
@@ -97,6 +98,7 @@ public class Nba {
         System.out.println("Youngest age "+youngestAge);
         System.out.println("Playername :: "+textPlayername);
         Assert.assertTrue(actualExperience.contains("1"));
+
 
 
     }
@@ -161,6 +163,7 @@ public class Nba {
 
         }
 
+
         if(ads.size()>0)
         {
            for (WebElement element: ads)
@@ -170,4 +173,6 @@ public class Nba {
         }
         ads.clear();
     }
+
+
 }
