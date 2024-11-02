@@ -53,10 +53,9 @@ public class Nba {
 
 
     @Test
-    public void test()
-    {
+    public void test() throws InterruptedException {
         chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless");  // Optional: Run in headless mode
+//        chromeOptions.addArguments("--headless");  // Optional: Run in headless mode
         chromeOptions.addArguments("--no-sandbox");
         chromeOptions.addArguments("--disable-dev-shm-usage");
         driver = new ChromeDriver(chromeOptions);
@@ -72,7 +71,9 @@ public class Nba {
             }
         } catch (Exception e) {
             System.out.println("No Element :: I Accept is present");
+            getElement("//button[text()='I Accept']").click();
         }
+        driver.executeScript("document.querySelectorAll('.bx-wrap').forEach(e=>e.remove());");
 
         click("//a[text()='See All Player Stats']");
         //select season
@@ -105,10 +106,9 @@ public class Nba {
 
 
     }
-    public List<WebElement> allElements(String xpath)
-    {
-        elementPresent();
-
+    public List<WebElement> allElements(String xpath) throws InterruptedException {
+//        elementPresent();
+        Thread.sleep(3000);
         return driver.findElements(By.xpath(xpath));
     }
     public WebElement getElement(String xpath)
@@ -148,7 +148,8 @@ public class Nba {
 
     public void elementPresent()
     {
-        List<WebElement> ads = new ArrayList<>();
+
+        /*List<WebElement> ads = new ArrayList<>();
         String xpath1="//button[@data-click='close' and preceding-sibling::div[contains(text(),'Click to subscribe to League Pass')]]";
         String xpath2="(//button[preceding::div[text()='Click to sign up for NBA ID']])[1]";
         String xpath3="(//button[preceding::div[text()='Enter your email to create an NBA ID']])[1]";
@@ -174,8 +175,9 @@ public class Nba {
                element.click();
            }
         }
-        ads.clear();
+        ads.clear();*/
     }
+
 
 
 }
